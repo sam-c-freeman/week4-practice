@@ -1,30 +1,39 @@
-// function returner(){
-//     console.log('in the returner function');
-//     return true;
-// }
+const seatsInCar = 5;
+let passengers = [];
+let tankFull = true;
 
-// returner();
-// console.log('running returner function:', returner());
+function enoughSeats(){
+    console.log('in enoughSeats');
+    if(seatsInCar >= passengers.length){
+       return true;
+    } //end enough seats
+    else {
+        return false;
+    } //end not enough seats
+    } //end enoughSeats
 
-// function mathExample(){
-//     console.log('in mathExample function');
-//     let answer = 3*9;
-//     return answer;
-// }
+function getInCar(nameOfPassenger){
+    console.log('in getInCar', nameOfPassenger);
+    passengers.push(nameOfPassenger);
+    return passengers;
+} //end
 
-// console.log('running mathExample:', mathExample());
+function readyForRoadTrip(){
+    console.log('in readyForRoadTrip');
+    if(enoughSeats() && tankFull){
+        return true;   
+    } //end all good
+    else{
+        return false;
+    } //not ready
+} //end readyForRoadTrip
 
-// function actualMath(num0, num1){
-//     console.log('in actualMath function', num0, num1);
-//     let answer = num0 * num1;
-//     return answer;
-
-// }
-
-// console.log('running actualMath with 4 & 6:', actualMath(4,6));
-// console.log('running actualMath with 1 & 6:', actualMath(1,6));
-// console.log('running actualMath with 4 & 3:', actualMath(4,3));
+getInCar('Sam');
+getInCar('Frodo');
+getInCar('Sascha');
+getInCar('Mila');
+getInCar('Miles');
 
 
-//making a change!
-
+console.log('do we have enough seats?', enoughSeats());
+console.log('are we ready for the trip?', readyForRoadTrip());
